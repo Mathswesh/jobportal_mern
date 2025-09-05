@@ -14,7 +14,7 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
-
+import { Tracker } from './components/Tracker'
 
 const appRouter = createBrowserRouter([
   {
@@ -59,6 +59,14 @@ const appRouter = createBrowserRouter([
     element:<ProtectedRoute><CompanySetup/></ProtectedRoute> 
   },
   {
+    path:"/admin/tracker",
+    element:<ProtectedRoute><Tracker/></ProtectedRoute>
+  },
+  {
+    path:"/admin/tracker/check",
+    element:<ProtectedRoute><Tracker/></ProtectedRoute>
+  },
+  {
     path:"/admin/jobs",
     element:<ProtectedRoute><AdminJobs/></ProtectedRoute> 
   },
@@ -69,8 +77,7 @@ const appRouter = createBrowserRouter([
   {
     path:"/admin/jobs/:id/applicants",
     element:<ProtectedRoute><Applicants/></ProtectedRoute> 
-  },
-
+  }
 ])
 function App() {
 
